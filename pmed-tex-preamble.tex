@@ -1,0 +1,131 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Required packages
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{etoolbox} % required for the programatic definition of alphabetic math symbols
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Notes
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Commands for operators and symbols should use all lower case letters
+
+% Commands changing the font for a character should use lower case letters for the portion
+% of the command representing the style and a character matching the desired output 
+% i.e. an upper-case letter if the output will be an upper-case letter. Examples:
+% \mbbR for \mathbb{R} not \mbbr for \mathbb{R}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Precision Medicine Related Quantities
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Data, Estimators, Etc. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Sets and Spaces related
+% Fundamentals
+\newcommand{\covarspace}{\mathcal{X}} % covariate space
+\newcommand{\armspace}{\mathcal{A}} % action space
+\newcommand{\outspace}{\mathcal{Y}} % outcome space
+\newcommand{\histspace}{\mathcal{H}} % history space
+
+% Shorthand
+\newcommand{\cspc}{\covarspace}% covariate space
+\newcommand{\aspc}{\armspace} % action space
+\newcommand{\ospc}{\outspace} % outcome space
+\newcommand{\yspc}{\outspace} % outcome space
+\newcommand{\hspc}{\histspace} % history space
+
+%%% Data
+% Fundamentals
+\newcommand{\covardist}{\mathcal{D}} % Covariate distribution
+\newcommand{\covarmat}{X} % Covariate 
+\newcommand{\obs}{x} % observed 
+\newcommand{\hist}{H} % history
+\newcommand{\resp}{Y} % response
+
+% Shorthand
+\newcommand{\histt}{H_t} % history up to time t shorthand
+\newcommand{\histn}{H_n} % history up to n observations shorthand
+
+%%% Policy and Parameter related symbols
+% Fundamentals
+\newcommand{\pol}{\pi} % generic policy
+\newcommand{\optpol}{\pi^{*}} % optimal policy
+\newcommand{\armparam}{\beta} % Parameter vector for a generic arm
+\newcommand{\polhat}{\widehat{\pol}} % estimated policy
+\newcommand{\armhat}{\widehat{\armparam}} % esimated arm parameter vector
+
+% Shorthand
+\newcommand{\polhatn}{\polhat_{n}} % shorthand for estimated policy based on a sample size of n
+\newcommand{\armparamk}{\armparam_{k}} % Parameter vector for arm k
+
+
+% Functions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Precision Medicine Specific
+% Fundamentals
+\DeclareMathOperator{\val}{{\mathcal{V} }} % value function
+\DeclareMathOperator{\BR}{BR} % Bayes Regret
+\DeclareMathOperator{\R}{\rm R} % Shortened form for regret
+\DeclareMathOperator{\Reg}{\rm Reg} % Regret
+\DeclareMathOperator{\Regpop}{\rm Reg^{pop}} %population regret
+\newcommand{\reghat}{\widehat{\Reg}} % Estimated Regret
+\DeclareMathOperator{\valhat}{{\widehat{\val}}} % estimated value function
+
+% Shorthand
+\DeclareMathOperator{\valhatn}{{\widehat{\val}}_{n}} % estimated value function estimated on a sample of size n
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Generally Useful Commands
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Operators
+% Fundamentals
+\DeclareMathOperator{\indfun}{{\boldsymbol{1}}} %indicator function
+\DeclareMathOperator{\sign}{sign} %sign function
+\DeclareMathOperator{\prob}{{\mathrm{Pr}}} % Probability
+\DeclareMathOperator{\expt}{{\rm I\kern-.3em E}} % expectation
+\DeclareMathOperator{\diag}{diag} 
+\DeclareMathOperator{\blkdiag}{blkdiag}
+\DeclareMathOperator{\KL}{\rm KL} % KL-divergence
+\DeclareMathOperator{\avar}{{\mathrm{Avar}}} % asymptotic variance
+\DeclareMathOperator{\vect}{vec} %vec operator
+\DeclareMathOperator*{\argmax}{argmax} % argmax - in display mode subscripts go directly under the argmax
+\DeclareMathOperator*{\argmin}{argmin} % argmin- in display mode subscripts go directly under the argmin
+\DeclareMathOperator{\var}{{\mathrm{Var}}} % variance
+\DeclareMathOperator{\cov}{{\mathrm{cov}}} % covariance
+\DeclareMathOperator{\mse}{{\mathrm{MSE}}} % mean squared error
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert} % norm. Argument to the command goes inside the double lines ||arg||  
+
+% Shorthand
+
+\DeclareMathOperator{\E}{\expt} %expectation shorthand
+
+%%% Alphabetic shorthand for Mathcal and Mathbb for every capital letter in the English alphabet
+
+\def\do#1{%
+  \expandafter\gdef\csname mc#1\endcsname{{\mathcal{#1}}}%
+  \expandafter\gdef\csname mbb#1\endcsname{{\mathbb{#1}}}%
+  \expandafter\gdef\csname msf#1\endcsname{{\mathsf{#1}}}%
+}
+
+%The \docsvlist command is provided by the etoolbox package and is 
+% responsible for iterating through a comma-separated list of values and 
+% applying a specified command to each value.
+% 'do csv list'
+\docsvlist{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
+
+
+%%% Command abbreviations
+\def\bs{\boldsymbol} 
+\def\l{\left}
+\def\r{\right}   
