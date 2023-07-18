@@ -1,5 +1,5 @@
 # pmed-tex-preamble
-LaTeX Preamble with macros, operators, and symbols for writing about Precision Medicion/Precision Health. The intended benefits of this file are to:
+LaTeX Preamble with macros, operators, and symbols for writing about Precision Medicine/Precision Health. The intended benefits of this file are to:
 1. Make notation easy to change - To change the symbol for something one line in the preamble needs to be changed. Avoids find and replace  
 2. Enhance document readability - Compare a) `\val(\pol)` vs. b) `\mathcal{V}(\pi)` . To understand (a) you have to remember the shorthand, while to understand (b) you have to remember the meaning of each symbol. 
 3. Reduce typos - writing what you mean instead of the associated symbols can prevent inconsistencies like forgetting to wrap a character in `\mathbb{}` or `\mathrm{}`
