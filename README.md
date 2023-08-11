@@ -40,10 +40,23 @@ Git clone is appropriate here.
 ### Notes on Contributing
 
 Define downstream quantities using the commands defined up stream. 
+
 Good: 
+
 \DeclareMathOperator{\val}{{\mathcal{V} }} % value function
+
 \DeclareMathOperator{\valhat}{{\widehat{\val}}} % estimated value function
 
 Bad:
+
 \DeclareMathOperator{\val}{{\mathcal{V}}} % value function
+
 \DeclareMathOperator{\valhat}{{\widehat{\mathcal{V} }}} % estimated value function
+
+Commands for operators and symbols should use all lower case letters
+
+Commands changing the font for a character should use lower case letters for the portion of the command representing the style and a character matching the desired output  i.e. an upper-case letter if the output will be an upper-case letter. 
+
+Good:\mbbR for \mathbb{R} 
+
+Bad: \mbbr for \mathbb{R}
