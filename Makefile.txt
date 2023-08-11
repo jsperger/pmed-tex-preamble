@@ -1,0 +1,33 @@
+# Makefile for combining LaTeX macro files based on CSV or all files
+
+# Macros folder containing individual macro files
+MACROS_FOLDER := macros
+
+# Output combined macro file
+OUTPUT_FILE := combined_macros.tex
+
+# CSV file specifying which files to include
+CSV_FILE := files_to_include.csv
+
+# Check if CSV file exists and build accordingly
+$(OUTPUT_FILE): $(CSV_FILE)
+	@if [ -e $(CSV_FILE) ]; then \
+		echo "Using files specified in $(CSV_FILE)"; \
+		echo "\\\ProvidesPackage{combinedmacros}" > $@; \
+		echo "{" >> $@; \
+		awk -F',' '/X/{print "\\input{" $$1 "}"}' $(CSV_FILE) >> $@; \
+		echo "}" >> $@; \
+	else \
+		echo "$(CSV_FILE) not found. Concatenating all .tex files in $(MACROS_FOLDER)"; \
+		echo "\\\ProvidesPackage{combinedmacros}" > $@; \
+		echo "{" >> $@; \
+		cat $(wildcard $(MACROS_FOLDER)/*.tex) >> $@; \
+		echo "}" >> $@; \
+	fi
+
+# Clean generated files
+clean:
+	rm -f $(OUTPUT_FILE)
+
+# Phony targets (targets that are not files)
+.PHONY: clean
