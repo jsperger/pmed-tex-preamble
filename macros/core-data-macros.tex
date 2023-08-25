@@ -1,0 +1,78 @@
+%% data-macros-core.tex
+%% Author: John Sperger and contributors
+
+%% Defines the core (i.e. no shorthand commands) commands related to
+%% the data in a paper. 
+
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Data
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Covariates
+\newcommand{\covarletter}{X}
+\newcommand{\covarspace}{\mathcal{\covarletter}} % covariate space
+\newcommand{\covarrv}{\MakeUppercase{\covarletter}} % Covariates generic rv
+\newcommand{\covarobs}{\MakeLowercase{\covarletter}} % observed covariates
+\newcommand{\covarvec}{\textbf{\covarrv}} % covariate vector - for when distinguishing between vector and scalar RVs
+\newcommand{\covarobsvec}{\textbf{\covarobs}} % observed covariate vector - for when distinguishing between vector and scalar RVs
+\newcommand{\covarmat}{\textbf{\covarrv}} % for distinguishing between matrix RVs and scalar/vector RVs
+\newcommand{\covarobsmat}{\covarrv} % for distinguishing between matrix RVs and scalar/vector RVs
+
+
+%% Response
+\newcommand{\respletter}{Y}
+\newcommand{\respspace}{\mathcal{\respletter}} % respiate space
+\newcommand{\resprv}{\MakeUppercase{\respletter}} % Respiates generic rv
+\newcommand{\respobs}{\MakeLowercase{\respletter}} % observed respiates
+\newcommand{\respvec}{\textbf{\resprv}} % respiate vector - for when distinguishing between vector and scalar RVs
+\newcommand{\respobsvec}{\textbf{\respobs}} % observed respiate vector - for when distinguishing between vector and scalar RVs
+\newcommand{\respmat}{\textbf{\resprv}} % for distinguishing between matrix RVs and scalar/vector RVs
+\newcommand{\respobsmat}{\resprv} % for distinguishing between matrix RVs and scalar/vector RVs
+
+
+%% Arms / Treatments
+\newcommand{\armletter}{A}
+\newcommand{\armspace}{\mathcal{\armletter}} % armiate space
+\newcommand{\armrv}{\MakeUppercase{\armletter}} % Armiates generic rv
+\newcommand{\armobs}{\MakeLowercase{\armletter}} % observed armiates
+\newcommand{\armvec}{\textbf{\armrv}} % armiate vector - for when distinguishing between vector and scalar RVs
+\newcommand{\armobsvec}{\textbf{\armobs}} % observed armiate vector - for when distinguishing between vector and scalar RVs
+\newcommand{\armmat}{\textbf{\armrv}} % for distinguishing between matrix RVs and scalar/vector RVs
+\newcommand{\armobsmat}{\armrv} % for distinguishing between matrix RVs and scalar/vector RVs
+
+%% History
+\newcommand{\histletter}{X}
+\newcommand{\histspace}{\mathcal{\histletter}} % histiate space
+\newcommand{\histrv}{\MakeUppercase{\histletter}} % Histiates generic rv
+\newcommand{\histobs}{\MakeLowercase{\histletter}} % observed histiates
+\newcommand{\histvec}{\textbf{\histrv}} % histiate vector - for when distinguishing between vector and scalar RVs
+\newcommand{\histobsvec}{\textbf{\histobs}} % observed histiate vector - for when distinguishing between vector and scalar RVs
+\newcommand{\histmat}{\textbf{\histrv}} % for distinguishing between matrix RVs and scalar/vector RVs
+\newcommand{\histobsmat}{\histrv} % for distinguishing between matrix RVs and scalar/vector RVs
+
+%% Propensity Score
+\newcommand{\propens}{\resprv^{*}}
+
+%% Time Varying Covariates
+
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Indices
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\clustindex}{i} % Cluster index
+\newcommand{\timeindex}{j} % Time Index
+\newcommand{\indindex}{k} % Individual index
+
+\newcommand{\maxclustindex}{\MakeUppercase{\clustindex}}
+\newcommand{\maxtimeindex}{\MakeUppercase{\timeindex}}
+\newcommand{\maxindindex}{\MakeUppercase{\indindex}}
